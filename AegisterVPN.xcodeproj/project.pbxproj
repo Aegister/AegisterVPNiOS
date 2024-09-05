@@ -1,0 +1,644 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		10E95E8E2C85C35500809BD7 /* AegisterVPNApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E95E8D2C85C35500809BD7 /* AegisterVPNApp.swift */; };
+		10E95E902C85C35500809BD7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E95E8F2C85C35500809BD7 /* ContentView.swift */; };
+		10E95E922C85C35600809BD7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 10E95E912C85C35600809BD7 /* Assets.xcassets */; };
+		10E95E952C85C35600809BD7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 10E95E942C85C35600809BD7 /* Preview Assets.xcassets */; };
+		10EC41772C85E02100B6F0D7 /* App.ovpn in Resources */ = {isa = PBXBuildFile; fileRef = 10EC41762C85E02100B6F0D7 /* App.ovpn */; };
+		10EC417B2C85E8A900B6F0D7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10EC417A2C85E8A900B6F0D7 /* AppDelegate.swift */; };
+		10EC417D2C85EB7200B6F0D7 /* OpenVPNAdapter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10EC417C2C85EB7200B6F0D7 /* OpenVPNAdapter.framework */; };
+		10EC41972C85EF5E00B6F0D7 /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10EC41842C85EEEF00B6F0D7 /* NetworkExtension.framework */; };
+		10EC419A2C85EF5E00B6F0D7 /* PacketTunnelProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10EC41992C85EF5E00B6F0D7 /* PacketTunnelProvider.swift */; };
+		10EC419F2C85EF5E00B6F0D7 /* networkTarget.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 10EC41962C85EF5E00B6F0D7 /* networkTarget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		10EC41A42C85F28700B6F0D7 /* OpenVPNAdapter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10EC41A32C85F28700B6F0D7 /* OpenVPNAdapter.framework */; };
+		34B825D7A58D7A6CAB44675C /* Pods_networkTarget.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FABCC21B888E03A68109393D /* Pods_networkTarget.framework */; };
+		CCC46A8BA67FCE8833892A1D /* Pods_AegisterVPN.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8C623D37BCCCF1382B33B34 /* Pods_AegisterVPN.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		10EC419D2C85EF5E00B6F0D7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 10E95E822C85C35500809BD7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 10EC41952C85EF5E00B6F0D7;
+			remoteInfo = networkTarget;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		10EC41912C85EEEF00B6F0D7 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				10EC419F2C85EF5E00B6F0D7 /* networkTarget.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		10E95E8A2C85C35500809BD7 /* AegisterVPN.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AegisterVPN.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		10E95E8D2C85C35500809BD7 /* AegisterVPNApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AegisterVPNApp.swift; sourceTree = "<group>"; };
+		10E95E8F2C85C35500809BD7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		10E95E912C85C35600809BD7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		10E95E942C85C35600809BD7 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		10EC41752C85DF3100B6F0D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		10EC41762C85E02100B6F0D7 /* App.ovpn */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = App.ovpn; sourceTree = "<group>"; };
+		10EC417A2C85E8A900B6F0D7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		10EC417C2C85EB7200B6F0D7 /* OpenVPNAdapter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = OpenVPNAdapter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		10EC417E2C85EBA900B6F0D7 /* AegisterVPN.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AegisterVPN.entitlements; sourceTree = "<group>"; };
+		10EC41842C85EEEF00B6F0D7 /* NetworkExtension.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NetworkExtension.framework; path = System/Library/Frameworks/NetworkExtension.framework; sourceTree = SDKROOT; };
+		10EC41962C85EF5E00B6F0D7 /* networkTarget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = networkTarget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		10EC41992C85EF5E00B6F0D7 /* PacketTunnelProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PacketTunnelProvider.swift; sourceTree = "<group>"; };
+		10EC419B2C85EF5E00B6F0D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		10EC419C2C85EF5E00B6F0D7 /* networkTarget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = networkTarget.entitlements; sourceTree = "<group>"; };
+		10EC41A32C85F28700B6F0D7 /* OpenVPNAdapter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = OpenVPNAdapter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		30B2B740C7976848D9B78EF1 /* Pods-networkTarget.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-networkTarget.release.xcconfig"; path = "Target Support Files/Pods-networkTarget/Pods-networkTarget.release.xcconfig"; sourceTree = "<group>"; };
+		5A31854779FF0DAB6B23125D /* Pods-networkTarget.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-networkTarget.debug.xcconfig"; path = "Target Support Files/Pods-networkTarget/Pods-networkTarget.debug.xcconfig"; sourceTree = "<group>"; };
+		5D0A4F23741E316AE724A53B /* Pods-AegisterVPN.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AegisterVPN.debug.xcconfig"; path = "Target Support Files/Pods-AegisterVPN/Pods-AegisterVPN.debug.xcconfig"; sourceTree = "<group>"; };
+		E1B0D85838705C4345D97929 /* Pods-AegisterVPN.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AegisterVPN.release.xcconfig"; path = "Target Support Files/Pods-AegisterVPN/Pods-AegisterVPN.release.xcconfig"; sourceTree = "<group>"; };
+		F8C623D37BCCCF1382B33B34 /* Pods_AegisterVPN.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AegisterVPN.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FABCC21B888E03A68109393D /* Pods_networkTarget.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_networkTarget.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		10E95E872C85C35500809BD7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				10EC417D2C85EB7200B6F0D7 /* OpenVPNAdapter.framework in Frameworks */,
+				CCC46A8BA67FCE8833892A1D /* Pods_AegisterVPN.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		10EC41932C85EF5E00B6F0D7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				10EC41A42C85F28700B6F0D7 /* OpenVPNAdapter.framework in Frameworks */,
+				10EC41972C85EF5E00B6F0D7 /* NetworkExtension.framework in Frameworks */,
+				34B825D7A58D7A6CAB44675C /* Pods_networkTarget.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		10E95E812C85C35500809BD7 = {
+			isa = PBXGroup;
+			children = (
+				10E95E8C2C85C35500809BD7 /* AegisterVPN */,
+				10EC41982C85EF5E00B6F0D7 /* networkTarget */,
+				10E95E8B2C85C35500809BD7 /* Products */,
+				D309FA9B19CA4E84FEC45DDF /* Pods */,
+				C7258BCC843BB4F5B85297DB /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		10E95E8B2C85C35500809BD7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				10E95E8A2C85C35500809BD7 /* AegisterVPN.app */,
+				10EC41962C85EF5E00B6F0D7 /* networkTarget.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		10E95E8C2C85C35500809BD7 /* AegisterVPN */ = {
+			isa = PBXGroup;
+			children = (
+				10EC417E2C85EBA900B6F0D7 /* AegisterVPN.entitlements */,
+				10EC41752C85DF3100B6F0D7 /* Info.plist */,
+				10E95E8D2C85C35500809BD7 /* AegisterVPNApp.swift */,
+				10EC417A2C85E8A900B6F0D7 /* AppDelegate.swift */,
+				10E95E8F2C85C35500809BD7 /* ContentView.swift */,
+				10EC41762C85E02100B6F0D7 /* App.ovpn */,
+				10E95E912C85C35600809BD7 /* Assets.xcassets */,
+				10E95E932C85C35600809BD7 /* Preview Content */,
+			);
+			path = AegisterVPN;
+			sourceTree = "<group>";
+		};
+		10E95E932C85C35600809BD7 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				10E95E942C85C35600809BD7 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		10EC41982C85EF5E00B6F0D7 /* networkTarget */ = {
+			isa = PBXGroup;
+			children = (
+				10EC41992C85EF5E00B6F0D7 /* PacketTunnelProvider.swift */,
+				10EC419B2C85EF5E00B6F0D7 /* Info.plist */,
+				10EC419C2C85EF5E00B6F0D7 /* networkTarget.entitlements */,
+			);
+			path = networkTarget;
+			sourceTree = "<group>";
+		};
+		C7258BCC843BB4F5B85297DB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				10EC41A32C85F28700B6F0D7 /* OpenVPNAdapter.framework */,
+				10EC417C2C85EB7200B6F0D7 /* OpenVPNAdapter.framework */,
+				F8C623D37BCCCF1382B33B34 /* Pods_AegisterVPN.framework */,
+				10EC41842C85EEEF00B6F0D7 /* NetworkExtension.framework */,
+				FABCC21B888E03A68109393D /* Pods_networkTarget.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D309FA9B19CA4E84FEC45DDF /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5D0A4F23741E316AE724A53B /* Pods-AegisterVPN.debug.xcconfig */,
+				E1B0D85838705C4345D97929 /* Pods-AegisterVPN.release.xcconfig */,
+				5A31854779FF0DAB6B23125D /* Pods-networkTarget.debug.xcconfig */,
+				30B2B740C7976848D9B78EF1 /* Pods-networkTarget.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		10E95E892C85C35500809BD7 /* AegisterVPN */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 10E95E982C85C35600809BD7 /* Build configuration list for PBXNativeTarget "AegisterVPN" */;
+			buildPhases = (
+				C9DF8EB45B932CACD9A3B443 /* [CP] Check Pods Manifest.lock */,
+				10E95E862C85C35500809BD7 /* Sources */,
+				10E95E872C85C35500809BD7 /* Frameworks */,
+				10E95E882C85C35500809BD7 /* Resources */,
+				96CACECBEFCB89CABB99704C /* [CP] Embed Pods Frameworks */,
+				10EC41912C85EEEF00B6F0D7 /* Embed Foundation Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				10EC419E2C85EF5E00B6F0D7 /* PBXTargetDependency */,
+			);
+			name = AegisterVPN;
+			productName = AegisterVPN;
+			productReference = 10E95E8A2C85C35500809BD7 /* AegisterVPN.app */;
+			productType = "com.apple.product-type.application";
+		};
+		10EC41952C85EF5E00B6F0D7 /* networkTarget */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 10EC41A02C85EF5E00B6F0D7 /* Build configuration list for PBXNativeTarget "networkTarget" */;
+			buildPhases = (
+				0ADFF9091C32AE2240A90B0B /* [CP] Check Pods Manifest.lock */,
+				10EC41922C85EF5E00B6F0D7 /* Sources */,
+				10EC41932C85EF5E00B6F0D7 /* Frameworks */,
+				10EC41942C85EF5E00B6F0D7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = networkTarget;
+			productName = networkTarget;
+			productReference = 10EC41962C85EF5E00B6F0D7 /* networkTarget.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		10E95E822C85C35500809BD7 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1540;
+				LastUpgradeCheck = 1540;
+				TargetAttributes = {
+					10E95E892C85C35500809BD7 = {
+						CreatedOnToolsVersion = 15.4;
+					};
+					10EC41952C85EF5E00B6F0D7 = {
+						CreatedOnToolsVersion = 15.4;
+					};
+				};
+			};
+			buildConfigurationList = 10E95E852C85C35500809BD7 /* Build configuration list for PBXProject "AegisterVPN" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 10E95E812C85C35500809BD7;
+			productRefGroup = 10E95E8B2C85C35500809BD7 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				10E95E892C85C35500809BD7 /* AegisterVPN */,
+				10EC41952C85EF5E00B6F0D7 /* networkTarget */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		10E95E882C85C35500809BD7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				10EC41772C85E02100B6F0D7 /* App.ovpn in Resources */,
+				10E95E952C85C35600809BD7 /* Preview Assets.xcassets in Resources */,
+				10E95E922C85C35600809BD7 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		10EC41942C85EF5E00B6F0D7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0ADFF9091C32AE2240A90B0B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-networkTarget-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		96CACECBEFCB89CABB99704C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AegisterVPN/Pods-AegisterVPN-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AegisterVPN/Pods-AegisterVPN-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AegisterVPN/Pods-AegisterVPN-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C9DF8EB45B932CACD9A3B443 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AegisterVPN-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		10E95E862C85C35500809BD7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				10EC417B2C85E8A900B6F0D7 /* AppDelegate.swift in Sources */,
+				10E95E902C85C35500809BD7 /* ContentView.swift in Sources */,
+				10E95E8E2C85C35500809BD7 /* AegisterVPNApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		10EC41922C85EF5E00B6F0D7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				10EC419A2C85EF5E00B6F0D7 /* PacketTunnelProvider.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		10EC419E2C85EF5E00B6F0D7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 10EC41952C85EF5E00B6F0D7 /* networkTarget */;
+			targetProxy = 10EC419D2C85EF5E00B6F0D7 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		10E95E962C85C35600809BD7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		10E95E972C85C35600809BD7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		10E95E992C85C35600809BD7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5D0A4F23741E316AE724A53B /* Pods-AegisterVPN.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = AegisterVPN/AegisterVPN.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"AegisterVPN/Preview Content\"";
+				DEVELOPMENT_TEAM = 43KKKRBAP2;
+				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = AegisterVPN/Info.plist;
+				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "Network Usage permession is needed for a VPN connection";
+				INFOPLIST_KEY_NSNetworkVolumesUsageDescription = "Network Volume Permession is required for a VPN connection";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = vpn.test.AegisterVPN;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		10E95E9A2C85C35600809BD7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E1B0D85838705C4345D97929 /* Pods-AegisterVPN.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = AegisterVPN/AegisterVPN.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"AegisterVPN/Preview Content\"";
+				DEVELOPMENT_TEAM = 43KKKRBAP2;
+				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = AegisterVPN/Info.plist;
+				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "Network Usage permession is needed for a VPN connection";
+				INFOPLIST_KEY_NSNetworkVolumesUsageDescription = "Network Volume Permession is required for a VPN connection";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = vpn.test.AegisterVPN;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		10EC41A12C85EF5E00B6F0D7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5A31854779FF0DAB6B23125D /* Pods-networkTarget.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = networkTarget/networkTarget.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 43KKKRBAP2;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = networkTarget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = networkTarget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = vpn.test.AegisterVPN.networkTarget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		10EC41A22C85EF5E00B6F0D7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 30B2B740C7976848D9B78EF1 /* Pods-networkTarget.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = networkTarget/networkTarget.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 43KKKRBAP2;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = networkTarget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = networkTarget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = vpn.test.AegisterVPN.networkTarget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		10E95E852C85C35500809BD7 /* Build configuration list for PBXProject "AegisterVPN" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				10E95E962C85C35600809BD7 /* Debug */,
+				10E95E972C85C35600809BD7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		10E95E982C85C35600809BD7 /* Build configuration list for PBXNativeTarget "AegisterVPN" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				10E95E992C85C35600809BD7 /* Debug */,
+				10E95E9A2C85C35600809BD7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		10EC41A02C85EF5E00B6F0D7 /* Build configuration list for PBXNativeTarget "networkTarget" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				10EC41A12C85EF5E00B6F0D7 /* Debug */,
+				10EC41A22C85EF5E00B6F0D7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 10E95E822C85C35500809BD7 /* Project object */;
+}

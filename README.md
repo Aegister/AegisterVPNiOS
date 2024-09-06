@@ -40,7 +40,7 @@ cd AegisterVPNiOS
 
 ### Step 3: Running the porject
 
-1. Open your projeect settings > target > AegisterVPN > Signing & Capabilities, sign in using your developer Daccount and change the `Bundle Identifier` to any of your choice. 
+1. Open your projeect settings > target > AegisterVPN > Signing & Capabilities, sign in using your developer account and change the `Bundle Identifier` to any of your choice. 
 
 2. Do the same in settings > target > networkTarget > Signing & Capabilities.
    

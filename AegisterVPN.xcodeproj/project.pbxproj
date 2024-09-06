@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		106FAD202C8B151F00F15463 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 106FAD1F2C8B151E00F15463 /* Localizable.xcstrings */; };
 		10E95E8E2C85C35500809BD7 /* AegisterVPNApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E95E8D2C85C35500809BD7 /* AegisterVPNApp.swift */; };
 		10E95E902C85C35500809BD7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E95E8F2C85C35500809BD7 /* ContentView.swift */; };
 		10E95E922C85C35600809BD7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 10E95E912C85C35600809BD7 /* Assets.xcassets */; };
@@ -47,6 +48,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		106FAD1F2C8B151E00F15463 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		10E95E8A2C85C35500809BD7 /* AegisterVPN.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AegisterVPN.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		10E95E8D2C85C35500809BD7 /* AegisterVPNApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AegisterVPNApp.swift; sourceTree = "<group>"; };
 		10E95E8F2C85C35500809BD7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -125,6 +127,7 @@
 				10EC41762C85E02100B6F0D7 /* App.ovpn */,
 				10E95E912C85C35600809BD7 /* Assets.xcassets */,
 				10E95E932C85C35600809BD7 /* Preview Content */,
+				106FAD1F2C8B151E00F15463 /* Localizable.xcstrings */,
 			);
 			path = AegisterVPN;
 			sourceTree = "<group>";
@@ -237,6 +240,7 @@
 			knownRegions = (
 				en,
 				Base,
+				it,
 			);
 			mainGroup = 10E95E812C85C35500809BD7;
 			productRefGroup = 10E95E8B2C85C35500809BD7 /* Products */;
@@ -256,6 +260,7 @@
 			files = (
 				10EC41772C85E02100B6F0D7 /* App.ovpn in Resources */,
 				10E95E952C85C35600809BD7 /* Preview Assets.xcassets in Resources */,
+				106FAD202C8B151F00F15463 /* Localizable.xcstrings in Resources */,
 				10E95E922C85C35600809BD7 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

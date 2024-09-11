@@ -2,6 +2,12 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:AegisterVPN/VPNProfile+CoreDataClass.swift">
+   </FileRef>
+   <FileRef
+      location = "group:AegisterVPN/VPNProfile+CoreDataProperties.swift">
+   </FileRef>
+   <FileRef
       location = "group:AegisterVPN.xcodeproj">
    </FileRef>
    <FileRef

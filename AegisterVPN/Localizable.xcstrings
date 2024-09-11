@@ -1,6 +1,9 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "Activate" : {
+
+    },
     "Connect" : {
       "localizations" : {
         "it" : {
@@ -40,6 +43,9 @@
           }
         }
       }
+    },
+    "Enter Activation Key" : {
+
     }
   },
   "version" : "1.0"

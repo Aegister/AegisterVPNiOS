@@ -7,12 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1059366B2C91849D00BEEC86 /* ActivationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1059366A2C91849D00BEEC86 /* ActivationView.swift */; };
+		1059366E2C91CED700BEEC86 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1059366C2C91CED700BEEC86 /* Model.xcdatamodeld */; };
 		106FAD202C8B151F00F15463 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 106FAD1F2C8B151E00F15463 /* Localizable.xcstrings */; };
 		10E95E8E2C85C35500809BD7 /* AegisterVPNApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E95E8D2C85C35500809BD7 /* AegisterVPNApp.swift */; };
 		10E95E902C85C35500809BD7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E95E8F2C85C35500809BD7 /* ContentView.swift */; };
 		10E95E922C85C35600809BD7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 10E95E912C85C35600809BD7 /* Assets.xcassets */; };
 		10E95E952C85C35600809BD7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 10E95E942C85C35600809BD7 /* Preview Assets.xcassets */; };
-		10EC41772C85E02100B6F0D7 /* App.ovpn in Resources */ = {isa = PBXBuildFile; fileRef = 10EC41762C85E02100B6F0D7 /* App.ovpn */; };
 		10EC417B2C85E8A900B6F0D7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10EC417A2C85E8A900B6F0D7 /* AppDelegate.swift */; };
 		10EC417D2C85EB7200B6F0D7 /* OpenVPNAdapter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10EC417C2C85EB7200B6F0D7 /* OpenVPNAdapter.framework */; };
 		10EC41972C85EF5E00B6F0D7 /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10EC41842C85EEEF00B6F0D7 /* NetworkExtension.framework */; };
@@ -48,6 +49,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1059366A2C91849D00BEEC86 /* ActivationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivationView.swift; sourceTree = "<group>"; };
+		1059366D2C91CED700BEEC86 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		106FAD1F2C8B151E00F15463 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		10E95E8A2C85C35500809BD7 /* AegisterVPN.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AegisterVPN.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		10E95E8D2C85C35500809BD7 /* AegisterVPNApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AegisterVPNApp.swift; sourceTree = "<group>"; };
@@ -55,7 +58,6 @@
 		10E95E912C85C35600809BD7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		10E95E942C85C35600809BD7 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		10EC41752C85DF3100B6F0D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		10EC41762C85E02100B6F0D7 /* App.ovpn */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = App.ovpn; sourceTree = "<group>"; };
 		10EC417A2C85E8A900B6F0D7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		10EC417C2C85EB7200B6F0D7 /* OpenVPNAdapter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = OpenVPNAdapter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		10EC417E2C85EBA900B6F0D7 /* AegisterVPN.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AegisterVPN.entitlements; sourceTree = "<group>"; };
@@ -124,10 +126,11 @@
 				10E95E8D2C85C35500809BD7 /* AegisterVPNApp.swift */,
 				10EC417A2C85E8A900B6F0D7 /* AppDelegate.swift */,
 				10E95E8F2C85C35500809BD7 /* ContentView.swift */,
-				10EC41762C85E02100B6F0D7 /* App.ovpn */,
+				1059366A2C91849D00BEEC86 /* ActivationView.swift */,
 				10E95E912C85C35600809BD7 /* Assets.xcassets */,
 				10E95E932C85C35600809BD7 /* Preview Content */,
 				106FAD1F2C8B151E00F15463 /* Localizable.xcstrings */,
+				1059366C2C91CED700BEEC86 /* Model.xcdatamodeld */,
 			);
 			path = AegisterVPN;
 			sourceTree = "<group>";
@@ -258,7 +261,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				10EC41772C85E02100B6F0D7 /* App.ovpn in Resources */,
 				10E95E952C85C35600809BD7 /* Preview Assets.xcassets in Resources */,
 				106FAD202C8B151F00F15463 /* Localizable.xcstrings in Resources */,
 				10E95E922C85C35600809BD7 /* Assets.xcassets in Resources */,
@@ -343,7 +345,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1059366B2C91849D00BEEC86 /* ActivationView.swift in Sources */,
 				10EC417B2C85E8A900B6F0D7 /* AppDelegate.swift in Sources */,
+				1059366E2C91CED700BEEC86 /* Model.xcdatamodeld in Sources */,
 				10E95E902C85C35500809BD7 /* ContentView.swift in Sources */,
 				10E95E8E2C85C35500809BD7 /* AegisterVPNApp.swift in Sources */,
 			);
@@ -644,6 +648,20 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		1059366C2C91CED700BEEC86 /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				1059366D2C91CED700BEEC86 /* Model.xcdatamodel */,
+			);
+			currentVersion = 1059366D2C91CED700BEEC86 /* Model.xcdatamodel */;
+			name = Model.xcdatamodeld;
+			path = "/Users/alysalman/Documents/iOS Projects/AEGISTER VPN/AegisterVPN/AegisterVPN/Model.xcdatamodeld";
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 10E95E822C85C35500809BD7 /* Project object */;
 }

@@ -2,7 +2,24 @@
   "sourceLanguage" : "en",
   "strings" : {
     "Activate" : {
-
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Attivare"
+          }
+        }
+      }
+    },
+    "Are you sure you want to delete the VPN configuration? This action cannot be undone." : {
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Siete sicuri di voler eliminare la configurazione VPN? Questa azione non può essere annullata."
+          }
+        }
+      }
     },
     "Connect" : {
       "localizations" : {
@@ -14,38 +31,65 @@
         }
       }
     },
-    "Connected" : {
+    "Delete" : {
       "localizations" : {
         "it" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Connetersi"
+            "value" : "Eliminazione"
           }
         }
       }
     },
-    "Disconnect" : {
+    "Delete VPN Configuration" : {
       "localizations" : {
         "it" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Disconnetti"
-          }
-        }
-      }
-    },
-    "Disconnected" : {
-      "localizations" : {
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Disconnetteresi"
+            "value" : "Eliminazione della configurazione VPN"
           }
         }
       }
     },
     "Enter Activation Key" : {
-
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Inserire la chiave di attivazione"
+          }
+        }
+      }
+    },
+    "Settings" : {
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Impostazioni"
+          }
+        }
+      }
+    },
+    "VPN is Activated" : {
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Il VPN è attivato"
+          }
+        }
+      }
+    },
+    "VPN is not Activated" : {
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Il VPN non è attivato"
+          }
+        }
+      }
     }
   },
   "version" : "1.0"

@@ -17,6 +17,13 @@ struct ActivationView: View {
     var body: some View {
         NavigationStack {
             VStack {
+                
+                Image("Aegister")
+                    .resizable()
+                    .scaledToFill()
+                    .frame(width: 55, height: 55)
+                    .padding(.bottom, 50)
+
                 TextField("Enter Activation Key", text: $activationKey)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .padding()
@@ -30,7 +37,11 @@ struct ActivationView: View {
                     fetchOVPNFile()
                 }) {
                     Text("Activate")
+                        .foregroundStyle(Color.white)
                         .bold()
+                        .padding()
+                        .background(Color.accentColor)
+                        .clipShape(RoundedRectangle(cornerRadius: 15))
                 }
                 .disabled(activationKey.isEmpty || vpnManager.isLoading)
                 

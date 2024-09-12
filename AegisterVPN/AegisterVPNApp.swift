@@ -27,8 +27,13 @@ struct AegisterVPNApp: App {
             } else {
                 if vpnManager.isConfigured {
                     ContentView()
+                        .scrollDismissesKeyboard(.immediately)
+                        .scrollIndicators(.never)
                 } else {
                     ActivationView(vpnManager: vpnManager)
+                        .scrollDismissesKeyboard(.immediately)
+                        .scrollIndicators(.never)
+
                 }
             }
         }

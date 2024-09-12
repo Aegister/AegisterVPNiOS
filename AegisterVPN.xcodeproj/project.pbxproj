@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		10537C372C92DD6E00F38818 /* ConnectScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10537C362C92DD6E00F38818 /* ConnectScreen.swift */; };
+		10537C392C92E45D00F38818 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10537C382C92E45D00F38818 /* SettingsView.swift */; };
 		1059366B2C91849D00BEEC86 /* ActivationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1059366A2C91849D00BEEC86 /* ActivationView.swift */; };
 		1059366E2C91CED700BEEC86 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1059366C2C91CED700BEEC86 /* Model.xcdatamodeld */; };
 		106FAD202C8B151F00F15463 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 106FAD1F2C8B151E00F15463 /* Localizable.xcstrings */; };
@@ -49,6 +51,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		10537C362C92DD6E00F38818 /* ConnectScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectScreen.swift; sourceTree = "<group>"; };
+		10537C382C92E45D00F38818 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		1059366A2C91849D00BEEC86 /* ActivationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivationView.swift; sourceTree = "<group>"; };
 		1059366D2C91CED700BEEC86 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		106FAD1F2C8B151E00F15463 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
@@ -126,6 +130,8 @@
 				10E95E8D2C85C35500809BD7 /* AegisterVPNApp.swift */,
 				10EC417A2C85E8A900B6F0D7 /* AppDelegate.swift */,
 				10E95E8F2C85C35500809BD7 /* ContentView.swift */,
+				10537C382C92E45D00F38818 /* SettingsView.swift */,
+				10537C362C92DD6E00F38818 /* ConnectScreen.swift */,
 				1059366A2C91849D00BEEC86 /* ActivationView.swift */,
 				10E95E912C85C35600809BD7 /* Assets.xcassets */,
 				10E95E932C85C35600809BD7 /* Preview Content */,
@@ -345,10 +351,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				10537C392C92E45D00F38818 /* SettingsView.swift in Sources */,
 				1059366B2C91849D00BEEC86 /* ActivationView.swift in Sources */,
 				10EC417B2C85E8A900B6F0D7 /* AppDelegate.swift in Sources */,
 				1059366E2C91CED700BEEC86 /* Model.xcdatamodeld in Sources */,
 				10E95E902C85C35500809BD7 /* ContentView.swift in Sources */,
+				10537C372C92DD6E00F38818 /* ConnectScreen.swift in Sources */,
 				10E95E8E2C85C35500809BD7 /* AegisterVPNApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

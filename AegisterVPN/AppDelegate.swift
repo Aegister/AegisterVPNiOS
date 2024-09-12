@@ -42,6 +42,8 @@ class VPNManager: ObservableObject {
     @Published var isConnected = false
     @Published var isConfigured = false
     @Published var isLoading = false
+    @Published var statusMessage = "Disconnected"
+    @Published var connectionStatus: NEVPNStatus = .disconnected
 
     private var providerManager: NETunnelProviderManager?
     private let context = PersistenceController.shared.container.viewContext
@@ -49,6 +51,7 @@ class VPNManager: ObservableObject {
     init() {
         loadOrCreateVPNProfile()
         checkVPNConfiguration()
+        monitorVPNStatus()
     }
 
     private func loadOrCreateVPNProfile() {
@@ -197,6 +200,63 @@ class VPNManager: ObservableObject {
             }
         }
     }
+    private func monitorVPNStatus() {
+        NotificationCenter.default.addObserver(
+            forName: .NEVPNStatusDidChange,
+            object: nil,
+            queue: OperationQueue.main) { [weak self] notification in
+                self?.updateVPNStatus()
+            }
+    }
+
+    private func updateVPNStatus() {
+        guard let status = providerManager?.connection.status else { return }
+        
+        DispatchQueue.main.async {
+            self.connectionStatus = status
+            switch status {
+            case .connected:
+                self.isConnected = true
+                self.statusMessage = "Connected"
+            case .disconnected:
+                self.isConnected = false
+                self.statusMessage = "Disconnected"
+            case .connecting:
+                self.statusMessage = "Connecting..."
+            case .disconnecting:
+                self.statusMessage = "Disconnecting..."
+    
+            default:
+                self.statusMessage = "Unknown status, make sure your VPN is activated"
+            }
+        }
+    }
+    func deleteVPNConfiguration() {
+        providerManager?.removeFromPreferences { [weak self] error in
+            if let error = error {
+                print("Failed to remove VPN configuration: \(error.localizedDescription)")
+                return
+            }
+
+            DispatchQueue.main.async {
+                self?.isConnected = false
+                print("VPN configuration removed successfully.")
+            }
+        }
+
+        let fetchRequest: NSFetchRequest<VPNProfile> = VPNProfile.fetchRequest()
+        do {
+            let profiles = try context.fetch(fetchRequest)
+            for profile in profiles {
+                context.delete(profile)
+            }
+            try context.save()
+            print("VPN configuration deleted from Core Data.")
+        } catch {
+            print("Failed to delete VPN configuration from Core Data: \(error.localizedDescription)")
+        }
+    }
+
 
     func disconnect() {
         providerManager?.connection.stopVPNTunnel()

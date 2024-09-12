@@ -9,28 +9,27 @@ import SwiftUI
 
 struct ContentView: View {
     @StateObject private var vpnManager = VPNManager()
-
+    @State private var selection = 1
     var body: some View {
-        VStack {
-            Text(vpnManager.isConnected ? "Connected" : "Disconnected")
-                .font(.largeTitle)
-                .padding()
-
-            Button(action: {
-                if vpnManager.isConnected {
-                    vpnManager.disconnect()
-                } else {
-                    vpnManager.connect()
+        TabView(selection:$selection) {
+            ConnectScreen()
+                .tabItem {
+                    Image(systemName: "app.connected.to.app.below.fill")
+                    Text("Connect")
+                        .foregroundStyle(Color.accentColor)
                 }
-            }) {
-                Text(vpnManager.isConnected ? "Disconnect" : "Connect")
-                    .font(.title)
-                    .padding()
-                    .background(Color.blue)
-                    .foregroundColor(.white)
-                    .cornerRadius(10)
-            }
+                .tag(1)
+            SettingsView(vpnManager: vpnManager)
+                .tabItem {
+                    Image(systemName: "gearshape.fill")
+                        Text("Settings")
+                        .foregroundStyle(Color.accentColor)
+                }
+                .tag(2)
         }
-        .padding()
     }
+}
+
+#Preview {
+    ContentView()
 }

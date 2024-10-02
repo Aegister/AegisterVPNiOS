@@ -42,7 +42,7 @@ class VPNManager: ObservableObject {
     @Published var isConnected = false
     @Published var isConfigured = false
     @Published var isLoading = false
-    @Published var statusMessage = "Disconnected"
+    @Published var statusMessage = "Connect"
     @Published var connectionStatus: NEVPNStatus = .disconnected
 
     private var providerManager: NETunnelProviderManager?
@@ -221,6 +221,10 @@ class VPNManager: ObservableObject {
             case .disconnected:
                 self.isConnected = false
                 self.statusMessage = "Disconnected"
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1.39) {
+                    self.statusMessage = "Connect"
+                }
+
             case .connecting:
                 self.statusMessage = "Connecting..."
             case .disconnecting:

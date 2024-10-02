@@ -11,58 +11,125 @@ struct ActivationView: View {
     @State private var activationKey = ""
     @State private var errorMessage: String?
     @State private var isActivated = false
+    @State private var currentPage = 0
     
     @ObservedObject var vpnManager: VPNManager
     
     var body: some View {
         NavigationStack {
-            VStack {
-                
-                Image("Aegister")
-                    .resizable()
-                    .scaledToFill()
-                    .frame(width: 55, height: 55)
-                    .padding(.bottom, 50)
-
-                TextField("Enter Activation Key", text: $activationKey)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
-                    .padding()
-                
-                if let error = errorMessage {
-                    Text(error)
-                        .foregroundColor(.red)
-                }
-                
-                Button(action: {
-                    fetchOVPNFile()
-                }) {
-                    Text("Activate")
-                        .foregroundStyle(Color.white)
+            TabView(selection: $currentPage) {
+                VStack {
+                    Image("Logo")
+                        .resizable()
+                        .scaledToFill()
+                        .frame(width: 55, height: 55)
+                        .padding(.bottom, 40)
+                    
+                    Text("Welcome to Aegister VPN")
+                        .font(.largeTitle)
                         .bold()
-                        .padding()
-                        .background(Color.accentColor)
-                        .clipShape(RoundedRectangle(cornerRadius: 15))
+                        .padding(.bottom, 20)
+                    
+                    Text("Your secure connection to the internet.")
+                        .font(.subheadline)
+                        .padding(.bottom, 40)
+                    
+                    Button(action: {
+                        currentPage += 1
+                    }) {
+                        Text("Next")
+                            .bold()
+                            .padding()
+                            .background(Color.accentColor)
+                            .foregroundColor(.white)
+                            .cornerRadius(10)
+                    }
                 }
-                .disabled(activationKey.isEmpty || vpnManager.isLoading)
+                .tag(0)
+                .padding()
                 
-                if vpnManager.isLoading {
-                    ProgressView()
+                VStack {
+                    Image(systemName: "key.fill")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 50, height: 50)
+                        .padding(.bottom, 40)
+                    
+                    Text("Get Your Activation Key")
+                        .font(.title)
+                        .bold()
+                        .padding(.bottom, 20)
+                    
+                    Text("Visit our platform app.aegister.com to obtain your activation key.")
+                        .font(.subheadline)
+                        .multilineTextAlignment(.center)
+                        .padding(.bottom, 40)
+                    
+                    Button(action: {
+                        currentPage += 1
+                    }) {
+                        Text("Next")
+                            .bold()
+                            .padding()
+                            .background(Color.accentColor)
+                            .foregroundColor(.white)
+                            .cornerRadius(10)
+                    }
                 }
+                .tag(1)
+                .padding()
+                
+                // Page 3: Enter Activation Key
+                VStack {
+                    Image(systemName: "lock.fill")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 50, height: 50)
+                        .padding(.bottom, 40)
+                    
+                    Text("Activate Your VPN")
+                        .font(.title)
+                        .bold()
+                        .padding(.bottom, 20)
+                    
+                    TextField("Enter Activation Key", text: $activationKey)
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                        .padding(.horizontal)
+                        .padding(.bottom, 20)
+                    
+                    if let error = errorMessage {
+                        Text(error)
+                            .foregroundColor(.red)
+                    }
+                    
+                    Button(action: {
+                        fetchOVPNFile()
+                    }) {
+                        Text("Activate")
+                            .bold()
+                            .padding()
+                            .background(activationKey.isEmpty || vpnManager.isLoading ? Color.gray : Color.accentColor)
+                            .foregroundColor(.white)
+                            .cornerRadius(10)
+                    }
+                    .disabled(activationKey.isEmpty || vpnManager.isLoading)
+                    
+                    if vpnManager.isLoading {
+                        ProgressView()
+                    }
+                }
+                .tag(2)
+                .padding()
             }
-            .padding()
+            .tabViewStyle(PageTabViewStyle())
             .navigationDestination(isPresented: $isActivated) {
                 ContentView()
             }
             .onChange(of: vpnManager.isConfigured) {
                 if vpnManager.isConfigured {
-                    isActivated = true
+                    currentPage = 3
                 } else {
                     errorMessage = "Failed to configure VPN"
-                }
-            }
-            .onChange(of: vpnManager.isLoading) {
-                if !vpnManager.isLoading {
-                    errorMessage = nil
                 }
             }
         }
@@ -76,7 +143,5 @@ struct ActivationView: View {
 
         errorMessage = nil
         vpnManager.fetchOVPNFile(with: activationKey)
-        
-        isActivated = false
     }
 }

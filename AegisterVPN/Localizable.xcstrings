@@ -11,6 +11,16 @@
         }
       }
     },
+    "Activate Your VPN" : {
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Attivare la VPN"
+          }
+        }
+      }
+    },
     "Are you sure you want to delete the VPN configuration? This action cannot be undone." : {
       "localizations" : {
         "it" : {
@@ -31,12 +41,33 @@
         }
       }
     },
+    "Continue" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Continuare"
+          }
+        }
+      }
+    },
     "Delete" : {
       "localizations" : {
         "it" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Eliminazione"
+          }
+        }
+      }
+    },
+    "Delete current VPN Configuration" : {
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Eliminare la configurazione VPN corrente"
           }
         }
       }
@@ -61,12 +92,53 @@
         }
       }
     },
+    "Get Your Activation Key" : {
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ottenere la chiave di attivazione"
+          }
+        }
+      }
+    },
+    "Next" : {
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Avanti"
+          }
+        }
+      }
+    },
     "Settings" : {
       "localizations" : {
         "it" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Impostazioni"
+          }
+        }
+      }
+    },
+    "Visit our platform app.aegister.com to obtain your activation key." : {
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Visitate la nostra piattaforma app.aegister.com per ottenere la chiave di attivazione."
+          }
+        }
+      }
+    },
+    "VPN Activated" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "VPN attivato"
           }
         }
       }
@@ -87,6 +159,37 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Il VPN non è attivato"
+          }
+        }
+      }
+    },
+    "Welcome to Aegister VPN" : {
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Benvenuti in Aegister VPN"
+          }
+        }
+      }
+    },
+    "Your secure connection to the internet." : {
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "La vostra connessione sicura a Internet."
+          }
+        }
+      }
+    },
+    "Your VPN is now active and secure." : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "La VPN è ora attiva e sicura."
           }
         }
       }

@@ -17,7 +17,7 @@ struct SettingsView: View {
     var body: some View {
         NavigationStack {
             VStack {
-                Image("Aegister")
+                Image("Logo")
                     .resizable()
                     .scaledToFill()
                     .frame(width: 55, height: 55)
@@ -59,14 +59,11 @@ struct SettingsView: View {
                     Button(action: {
                         showDeleteConfirmation = true
                     }) {
-                        Image(systemName: "trash.fill")
+                        Text("Delete current VPN Configuration")
                             .foregroundStyle(Color.red)
-                            .font(.title)
+                            .font(.footnote)
                             .bold()
                             .padding()
-                            .background(Color.clear)
-                            .clipShape(RoundedRectangle(cornerRadius: 15))
-
                     }
                 }
             }

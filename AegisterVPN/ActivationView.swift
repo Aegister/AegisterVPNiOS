@@ -79,7 +79,6 @@ struct ActivationView: View {
                 .tag(1)
                 .padding()
                 
-                // Page 3: Enter Activation Key
                 VStack {
                     Image(systemName: "lock.fill")
                         .resizable()
@@ -122,6 +121,10 @@ struct ActivationView: View {
                 .padding()
             }
             .tabViewStyle(PageTabViewStyle())
+            .onAppear {
+                UIPageControl.appearance().currentPageIndicatorTintColor = UIColor.accent
+                UIPageControl.appearance().pageIndicatorTintColor = UIColor.accent.withAlphaComponent(0.35)
+            }
             .navigationDestination(isPresented: $isActivated) {
                 ContentView()
             }
@@ -144,4 +147,8 @@ struct ActivationView: View {
         errorMessage = nil
         vpnManager.fetchOVPNFile(with: activationKey)
     }
+}
+
+#Preview {
+    ActivationView(vpnManager: VPNManager())
 }

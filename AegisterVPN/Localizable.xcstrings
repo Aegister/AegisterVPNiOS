@@ -41,17 +41,6 @@
         }
       }
     },
-    "Continue" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Continuare"
-          }
-        }
-      }
-    },
     "Delete" : {
       "localizations" : {
         "it" : {
@@ -132,17 +121,6 @@
         }
       }
     },
-    "VPN Activated" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "VPN attivato"
-          }
-        }
-      }
-    },
     "VPN is Activated" : {
       "localizations" : {
         "it" : {
@@ -179,17 +157,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "La vostra connessione sicura a Internet."
-          }
-        }
-      }
-    },
-    "Your VPN is now active and secure." : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "La VPN è ora attiva e sicura."
           }
         }
       }

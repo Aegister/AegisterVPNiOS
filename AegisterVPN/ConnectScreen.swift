@@ -41,6 +41,7 @@ struct ConnectScreen: View {
                         
             Spacer()
         }
+        .backgroundLogo(logo: Image("Aegister"))
     }
 }
 

@@ -120,6 +120,7 @@ struct ActivationView: View {
                 .tag(2)
                 .padding()
             }
+            .backgroundLogo(logo: Image("Aegister"))
             .tabViewStyle(PageTabViewStyle())
             .onAppear {
                 UIPageControl.appearance().currentPageIndicatorTintColor = UIColor.accent
@@ -137,6 +138,7 @@ struct ActivationView: View {
             }
         }
     }
+    
     
     func fetchOVPNFile() {
         guard !activationKey.isEmpty else {

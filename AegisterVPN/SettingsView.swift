@@ -67,6 +67,7 @@ struct SettingsView: View {
                     }
                 }
             }
+            .backgroundLogo(logo: Image("Aegister"))
             .padding()
             .onChange(of: vpnManager.isConfigured) { oldValue, newValue in
                 if oldValue != newValue {

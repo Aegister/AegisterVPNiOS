@@ -268,3 +268,28 @@ class VPNManager: ObservableObject {
         print("VPN tunnel stopped.")
     }
 }
+
+struct BackgroundLogoView: ViewModifier {
+    var logoImage: Image
+    
+    func body(content: Content) -> some View {
+        content
+            .background(
+                ZStack {
+                    logoImage
+                        .resizable()
+                        .scaledToFit()
+                        .opacity(0.5)
+                        .offset(x: 175, y:0)
+                        .blur(radius: 10)
+                        .edgesIgnoringSafeArea(.all)
+                }
+            )
+    }
+}
+
+extension View {
+    func backgroundLogo(logo: Image) -> some View {
+        self.modifier(BackgroundLogoView(logoImage: logo))
+    }
+}

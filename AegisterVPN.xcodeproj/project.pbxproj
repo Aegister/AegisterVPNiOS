@@ -510,11 +510,13 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"AegisterVPN/Preview Content\"";
-				DEVELOPMENT_TEAM = 43KKKRBAP2;
+				DEVELOPMENT_TEAM = NPHVGGGTZ7;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = AegisterVPN/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = AegisterVPN;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "Network Usage permession is needed for a VPN connection";
 				INFOPLIST_KEY_NSNetworkVolumesUsageDescription = "Network Volume Permession is required for a VPN connection";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -527,7 +529,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = vpn.test.AegisterVPN;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Aegister.VPN.AegisterVPN;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -546,11 +548,13 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"AegisterVPN/Preview Content\"";
-				DEVELOPMENT_TEAM = 43KKKRBAP2;
+				DEVELOPMENT_TEAM = NPHVGGGTZ7;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = AegisterVPN/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = AegisterVPN;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "Network Usage permession is needed for a VPN connection";
 				INFOPLIST_KEY_NSNetworkVolumesUsageDescription = "Network Volume Permession is required for a VPN connection";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -563,7 +567,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = vpn.test.AegisterVPN;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Aegister.VPN.AegisterVPN;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -578,7 +582,7 @@
 				CODE_SIGN_ENTITLEMENTS = networkTarget/networkTarget.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 43KKKRBAP2;
+				DEVELOPMENT_TEAM = NPHVGGGTZ7;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = networkTarget/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = networkTarget;
@@ -589,7 +593,7 @@
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = vpn.test.AegisterVPN.networkTarget;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Aegister.VPN.AegisterVPN.networkTarget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -605,7 +609,7 @@
 				CODE_SIGN_ENTITLEMENTS = networkTarget/networkTarget.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 43KKKRBAP2;
+				DEVELOPMENT_TEAM = NPHVGGGTZ7;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = networkTarget/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = networkTarget;
@@ -616,7 +620,7 @@
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = vpn.test.AegisterVPN.networkTarget;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Aegister.VPN.AegisterVPN.networkTarget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;

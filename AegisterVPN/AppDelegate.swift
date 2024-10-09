@@ -160,7 +160,7 @@ class VPNManager: ObservableObject {
             }
 
             let tunnelProtocol = NETunnelProviderProtocol()
-            tunnelProtocol.providerBundleIdentifier = "vpn.test.AegisterVPN.networkTarget"
+            tunnelProtocol.providerBundleIdentifier = "com.Aegister.VPN.AegisterVPN.networkTarget"
             tunnelProtocol.providerConfiguration = ["ovpn": ovpnFileData]
             tunnelProtocol.serverAddress = ""
 

@@ -8,6 +8,9 @@
 import NetworkExtension
 import SwiftUI
 import CoreData
+import UIKit
+import Foundation
+
 
 //CoreData
 class PersistenceController {
@@ -37,13 +40,13 @@ class PersistenceController {
     }
 }
 
-//VPN MANAGER CLASS
 class VPNManager: ObservableObject {
     @Published var isConnected = false
     @Published var isConfigured = false
     @Published var isLoading = false
     @Published var statusMessage = "Connect"
     @Published var connectionStatus: NEVPNStatus = .disconnected
+
 
     private var providerManager: NETunnelProviderManager?
     private let context = PersistenceController.shared.container.viewContext
@@ -52,6 +55,114 @@ class VPNManager: ObservableObject {
         loadOrCreateVPNProfile()
         checkVPNConfiguration()
         monitorVPNStatus()
+    }
+    
+    func sendEmailToApi(token: String, completion: @escaping (Result<Void, Error>) -> Void) {
+        let urlString = "https://app.aegister.com/api/v1/vpn?include_cert=true&only_mine=true"
+        guard let url = URL(string: urlString) else {
+            print("Invalid URL")
+            return
+        }
+        
+        
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "GET"
+        request.setValue(token, forHTTPHeaderField: "X-Aegister-Token")
+        
+
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            if let error = error {
+                print("Error fetching VPN profiles: \(error.localizedDescription)")
+                DispatchQueue.main.async {
+                    completion(.failure(error))
+                }
+                return
+            }
+
+            guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else {
+                print("Failed to fetch VPN profiles: Invalid response")
+                DispatchQueue.main.async {
+                    let fetchError = NSError(domain: "", code: 0, userInfo: [NSLocalizedDescriptionKey : NSLocalizedString("fetchVpnFailed", comment: "Failed to fetch VPN profiles.")])
+                    completion(.failure(fetchError))
+                }
+                return
+            }
+
+            guard let data = data else {
+                print("No data received")
+                DispatchQueue.main.async {
+                    let noDataError = NSError(domain: "", code: 0, userInfo: [NSLocalizedDescriptionKey : NSLocalizedString("fetchVpnFailed", comment: "Failed to fetch VPN profiles.")])
+                    completion(.failure(noDataError))
+                }
+                return
+            }
+
+            do {
+                if let responseData = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any],
+                   let error = responseData["error"] as? Int,
+                   error == 0,
+                   let vpnData = (responseData["data"] as? [[String: Any]])?.first,
+                   let vpnCertContent = vpnData["cert"] as? String {
+                    
+                    if let certFileURL = self.saveCertToFile(certContent: vpnCertContent) {
+                        do {
+                            let certData = try Data(contentsOf: certFileURL)
+                            DispatchQueue.main.async {
+                                
+                                self.saveVPNConfiguration(data: certData)
+                                self.configureVPNProfile(with: certData)
+                                completion(.success(()))
+                            }
+                        } catch {
+                            print("Failed to load certificate data from file: \(error.localizedDescription)")
+                            DispatchQueue.main.async {
+                                completion(.failure(error))
+                            }
+                        }
+                    } else {
+                        print("Failed to save certificate file.")
+                        DispatchQueue.main.async {
+                            let saveError = NSError(domain: "", code: 0, userInfo: [NSLocalizedDescriptionKey : "Failed to save certificate file."])
+                            completion(.failure(saveError))
+                        }
+                    }
+                } else {
+                    DispatchQueue.main.async {
+                        print(NSLocalizedString("noVpnProfiles", comment: "No VPN profiles found for this email."))
+                        let noProfilesError = NSError(domain: "", code: 0, userInfo: [NSLocalizedDescriptionKey : NSLocalizedString("noVpnProfiles", comment: "No VPN profiles found for this email.")])
+                        completion(.failure(noProfilesError))
+                    }
+                }
+            } catch {
+                print("Error parsing response data: \(error.localizedDescription)")
+                DispatchQueue.main.async {
+                    completion(.failure(error))
+                }
+            }
+        }
+        task.resume()
+    }
+
+    func saveCertToFile(certContent: String) -> URL? {
+        let fileManager = FileManager.default
+        guard let documentsDirectory = fileManager.urls(for: .documentDirectory, in: .userDomainMask).first else {
+            print("Unable to access documents directory.")
+            return nil
+        }
+        
+        // Define the file path and name
+        let fileURL = documentsDirectory.appendingPathComponent("file.ovpn")
+        
+        // Write the certificate content directly to the file
+        do {
+            try certContent.write(to: fileURL, atomically: true, encoding: .utf8)
+            print("Certificate saved successfully at \(fileURL.path)")
+            return fileURL
+        } catch {
+            print("Error saving certificate: \(error.localizedDescription)")
+            return nil
+        }
     }
 
     private func loadOrCreateVPNProfile() {
@@ -135,22 +246,35 @@ class VPNManager: ObservableObject {
                 }
                 return
             }
-
             self?.saveVPNConfiguration(data: data)
             self?.configureVPNProfile(with: data)
         }.resume()
     }
-
+    
+    
+    
     private func configureVPNProfile(with ovpnFileData: Data) {
-        providerManager?.loadFromPreferences { [weak self] error in
-            guard error == nil else {
-                print("Error loading preferences: \(String(describing: error))")
+        guard let providerManager = self.providerManager else {
+            print("Error: providerManager is nil.")
+            DispatchQueue.main.async {
+                self.isConfigured = false
+            }
+            return
+        }
+
+        print("Loading preferences...")
+        providerManager.loadFromPreferences { [weak self] error in
+            if let error = error {
+                print("Error loading preferences: \(error.localizedDescription)")
                 DispatchQueue.main.async {
                     self?.isConfigured = false
                 }
                 return
             }
+            print("Preferences loaded successfully.")
 
+
+            print("OVPN file data length: \(ovpnFileData.count)")
             guard !ovpnFileData.isEmpty else {
                 print("Error: OVPN file data is empty.")
                 DispatchQueue.main.async {
@@ -159,16 +283,19 @@ class VPNManager: ObservableObject {
                 return
             }
 
+
             let tunnelProtocol = NETunnelProviderProtocol()
             tunnelProtocol.providerBundleIdentifier = "com.Aegister.VPN.AegisterVPN.networkTarget"
             tunnelProtocol.providerConfiguration = ["ovpn": ovpnFileData]
             tunnelProtocol.serverAddress = ""
+            print("Configuring tunnel protocol: \(tunnelProtocol)")
 
-            self?.providerManager?.protocolConfiguration = tunnelProtocol
-            self?.providerManager?.localizedDescription = "Aegister VPN"
-            self?.providerManager?.isEnabled = true
+            providerManager.protocolConfiguration = tunnelProtocol
+            providerManager.localizedDescription = "Aegister VPN"
+            providerManager.isEnabled = true
 
-            self?.providerManager?.saveToPreferences { error in
+            print("Saving VPN configuration to preferences...")
+            providerManager.saveToPreferences { error in
                 if let error = error {
                     print("Error saving preferences: \(error.localizedDescription)")
                     DispatchQueue.main.async {
@@ -179,6 +306,7 @@ class VPNManager: ObservableObject {
                     DispatchQueue.main.async {
                         self?.isConfigured = true
                     }
+
                 }
             }
         }
@@ -218,6 +346,9 @@ class VPNManager: ObservableObject {
             case .connected:
                 self.isConnected = true
                 self.statusMessage = "Connected"
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1.39) {
+                    self.statusMessage = "Disconnect"
+                }
             case .disconnected:
                 self.isConnected = false
                 self.statusMessage = "Disconnected"
@@ -259,8 +390,8 @@ class VPNManager: ObservableObject {
         } catch {
             print("Failed to delete VPN configuration from Core Data: \(error.localizedDescription)")
         }
-    }
 
+    }
 
     func disconnect() {
         providerManager?.connection.stopVPNTunnel()
@@ -278,11 +409,11 @@ struct BackgroundLogoView: ViewModifier {
                 ZStack {
                     logoImage
                         .resizable()
-                        .scaledToFit()
+                        .scaledToFill()
                         .opacity(0.5)
                         .offset(x: 175, y:0)
-                        .blur(radius: 10)
-                        .edgesIgnoringSafeArea(.all)
+                        .blur(radius: 23)
+                    content
                 }
             )
     }
@@ -291,5 +422,31 @@ struct BackgroundLogoView: ViewModifier {
 extension View {
     func backgroundLogo(logo: Image) -> some View {
         self.modifier(BackgroundLogoView(logoImage: logo))
+    }
+}
+
+struct BackgroundView: ViewModifier {
+    var logoImage: Image
+    
+    func body(content: Content) -> some View {
+        content
+            .background(
+                ZStack {
+                    logoImage
+                        .resizable()
+                        .scaledToFit()
+                        .opacity(0.5)
+                        .offset(x: 175, y:0)
+                        .blur(radius: 10)
+                        .edgesIgnoringSafeArea(.all)
+                    content
+                }
+            )
+    }
+}
+
+extension View {
+    func BackgroundViewLogo(logo: Image) -> some View {
+        self.modifier(BackgroundView(logoImage: logo))
     }
 }

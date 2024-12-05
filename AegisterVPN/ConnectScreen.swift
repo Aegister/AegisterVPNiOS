@@ -18,9 +18,9 @@ struct ConnectScreen: View {
                 .resizable()
                 .scaledToFill()
                 .frame(width: 55, height: 55)
-            
-            Spacer()
-            
+                .padding(.bottom, 50)
+
+                    
             Button(action: {
                 if vpnManager.isConnected {
                     vpnManager.disconnect()
@@ -31,13 +31,11 @@ struct ConnectScreen: View {
                 Text(vpnManager.statusMessage)
                     .bold()
                     .padding()
-                    .frame(maxWidth: .infinity)
+                    .frame(maxWidth: 235)
                     .background( Color.accentColor)
                     .foregroundColor(.white)
-                    .cornerRadius(15)
+                    .cornerRadius(10)
             }
-            .padding(.horizontal, 50)
-            .padding(.bottom)
                         
             Spacer()
         }

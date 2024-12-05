@@ -22,6 +22,7 @@
       }
     },
     "Are you sure you want to delete the VPN configuration? This action cannot be undone." : {
+      "extractionState" : "stale",
       "localizations" : {
         "it" : {
           "stringUnit" : {
@@ -31,12 +32,26 @@
         }
       }
     },
+    "Are you sure you want to log out and delete the VPN configuration? This action cannot be undone." : {
+
+    },
     "Connect" : {
       "localizations" : {
         "it" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Connetti"
+          }
+        }
+      }
+    },
+    "Connecting..." : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Collegamento…"
           }
         }
       }
@@ -52,6 +67,7 @@
       }
     },
     "Delete current VPN Configuration" : {
+      "extractionState" : "stale",
       "localizations" : {
         "it" : {
           "stringUnit" : {
@@ -62,11 +78,45 @@
       }
     },
     "Delete VPN Configuration" : {
+      "extractionState" : "stale",
       "localizations" : {
         "it" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Eliminazione della configurazione VPN"
+          }
+        }
+      }
+    },
+    "Disconnect" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Disconnessione"
+          }
+        }
+      }
+    },
+    "Disconnected" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Disconnesso"
+          }
+        }
+      }
+    },
+    "Disconnecting..." : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Disconnettere…"
           }
         }
       }
@@ -81,6 +131,9 @@
         }
       }
     },
+    "fetchVpnFailed" : {
+      "comment" : "Failed to fetch VPN profiles."
+    },
     "Get Your Activation Key" : {
       "localizations" : {
         "it" : {
@@ -90,6 +143,12 @@
           }
         }
       }
+    },
+    "Log Out" : {
+
+    },
+    "Logout" : {
+
     },
     "Next" : {
       "localizations" : {
@@ -101,6 +160,21 @@
         }
       }
     },
+    "No VPN Profile Found" : {
+
+    },
+    "No VPN profile found associated with the account." : {
+
+    },
+    "noVpnProfiles" : {
+      "comment" : "No VPN profiles found for this email."
+    },
+    "OK" : {
+
+    },
+    "Or" : {
+
+    },
     "Settings" : {
       "localizations" : {
         "it" : {
@@ -110,6 +184,9 @@
           }
         }
       }
+    },
+    "Sign In" : {
+
     },
     "Visit our platform app.aegister.com to obtain your activation key." : {
       "localizations" : {
@@ -122,6 +199,7 @@
       }
     },
     "VPN is Activated" : {
+      "extractionState" : "stale",
       "localizations" : {
         "it" : {
           "stringUnit" : {
@@ -132,6 +210,7 @@
       }
     },
     "VPN is not Activated" : {
+      "extractionState" : "stale",
       "localizations" : {
         "it" : {
           "stringUnit" : {

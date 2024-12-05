@@ -6,18 +6,23 @@
 //
 
 import SwiftUI
+import AuthenticationServices
+
 
 struct ActivationView: View {
     @State private var activationKey = ""
     @State private var errorMessage: String?
     @State private var isActivated = false
     @State private var currentPage = 0
+    @State private var showAuth = false
+    @State private var showAlert = false
     
     @ObservedObject var vpnManager: VPNManager
     
     var body: some View {
         NavigationStack {
             TabView(selection: $currentPage) {
+                // First Page
                 VStack {
                     Image("Logo")
                         .resizable()
@@ -48,6 +53,7 @@ struct ActivationView: View {
                 .tag(0)
                 .padding()
                 
+                // Second Page
                 VStack {
                     Image(systemName: "key.fill")
                         .resizable()
@@ -113,30 +119,66 @@ struct ActivationView: View {
                     }
                     .disabled(activationKey.isEmpty || vpnManager.isLoading)
                     
-                    if vpnManager.isLoading {
-                        ProgressView()
+                    HStack {
+                        Text("Or")
+                            .font(.subheadline)
+                            .foregroundColor(.gray)
                     }
+                    .padding(.horizontal)
+                    
+                    Button(action: {
+                        showAuth = true
+                    }) {
+                        Text("Sign In")
+                            .bold()
+                            .padding()
+                            .background(Color.accentColor)
+                            .foregroundColor(.white)
+                            .cornerRadius(10)
+                    }
+                    .padding()
+                    
                 }
                 .tag(2)
                 .padding()
             }
-            .backgroundLogo(logo: Image("Aegister"))
             .tabViewStyle(PageTabViewStyle())
+            .BackgroundViewLogo(logo: Image("Aegister"))
             .onAppear {
-                UIPageControl.appearance().currentPageIndicatorTintColor = UIColor.accent
-                UIPageControl.appearance().pageIndicatorTintColor = UIColor.accent.withAlphaComponent(0.35)
+                UIPageControl.appearance().currentPageIndicatorTintColor = UIColor(Color.accentColor)
+                UIPageControl.appearance().pageIndicatorTintColor = UIColor(Color.accentColor).withAlphaComponent(0.35)
             }
             .navigationDestination(isPresented: $isActivated) {
                 ContentView()
             }
-            .onChange(of: vpnManager.isConfigured) {
+            .onChange(of:vpnManager.isConfigured)  {
                 if vpnManager.isConfigured {
                     currentPage = 3
                 } else {
                     errorMessage = "Failed to configure VPN"
                 }
             }
+            
+            .sheet(isPresented: $showAuth, onDismiss: {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 2.5) {
+                    vpnManager.checkVPNConfiguration()
+                    if !isActivated {
+                        showAlert = true
+                        
+                    }
+                }
+            }) {
+                WebAuthPresenter()
+            }
+            .alert(isPresented: $showAlert) {
+                Alert(
+                    title: Text("No VPN Profile Found"),
+                    message: Text("No VPN profile found associated with the account."),
+                    dismissButton: .default(Text("OK"))
+                )
+            }
         }
+        
     }
     
     
@@ -145,7 +187,7 @@ struct ActivationView: View {
             errorMessage = "Activation key cannot be empty."
             return
         }
-
+        
         errorMessage = nil
         vpnManager.fetchOVPNFile(with: activationKey)
     }

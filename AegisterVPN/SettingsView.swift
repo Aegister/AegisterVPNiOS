@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct SettingsView: View {
-    @State private var activationKey = ""
     @State private var errorMessage: String?
     @State private var showDeleteConfirmation = false
     
@@ -17,58 +16,27 @@ struct SettingsView: View {
     var body: some View {
         NavigationStack {
             VStack {
+                Spacer()
                 Image("Logo")
                     .resizable()
                     .scaledToFill()
                     .frame(width: 55, height: 55)
                     .padding(.bottom, 50)
-
-                if !vpnManager.isConfigured {
-                    TextField("Enter Activation Key", text: $activationKey)
-                        .textFieldStyle(RoundedBorderTextFieldStyle())
-                        .padding()
-                    
-                    if let error = errorMessage {
-                        Text(error)
-                            .foregroundColor(.red)
-                            .padding(.bottom, 5)
-                    }
-
-                    Button(action: {
-                        fetchOVPNFile()
-                    }) {
-                        Text("Activate")
-                            .foregroundStyle(Color.white)
-                            .bold()
-                            .padding()
-                            .background(Color.accentColor)
-                            .clipShape(RoundedRectangle(cornerRadius: 15))
-                    }
-                    .disabled(activationKey.isEmpty || vpnManager.isLoading)
-                    .padding(.bottom, 20)
-
-                    Text("VPN is not Activated")
-                        .font(.headline)
-                        .foregroundColor(.gray)
-                } else {
-                    Text("VPN is Activated")
-                        .font(.headline)
-                        .foregroundColor(.green)
-                        .padding(.bottom, 20)
-                    
+                                
                     Button(action: {
                         showDeleteConfirmation = true
                     }) {
-                        Text("Delete current VPN Configuration")
+                        Text("Logout")
                             .foregroundStyle(Color.red)
-                            .font(.footnote)
+                            .frame(maxWidth: 203)
                             .bold()
                             .padding()
-                    }
+                            .background(Color.accentColor)
+                            .cornerRadius(10)
                 }
+                Spacer()
             }
-            .backgroundLogo(logo: Image("Aegister"))
-            .padding()
+            .backgroundLogo(logo: Image("Aegister")) // Ensure the logo is scaled and visible
             .onChange(of: vpnManager.isConfigured) { oldValue, newValue in
                 if oldValue != newValue {
                     if !newValue {
@@ -85,8 +53,8 @@ struct SettingsView: View {
             }
             .alert(isPresented: $showDeleteConfirmation) {
                 Alert(
-                    title: Text("Delete VPN Configuration"),
-                    message: Text("Are you sure you want to delete the VPN configuration? This action cannot be undone."),
+                    title: Text("Log Out"),
+                    message: Text("Are you sure you want to log out and delete the VPN configuration? This action cannot be undone."),
                     primaryButton: .destructive(Text("Delete")) {
                         vpnManager.disconnect()
                         vpnManager.deleteVPNConfiguration()
@@ -98,18 +66,13 @@ struct SettingsView: View {
                 )
             }
         }
+        
     }
-    
-    func fetchOVPNFile() {
-        guard !activationKey.isEmpty else {
-            errorMessage = "Activation key cannot be empty."
-            return
-        }
 
-        errorMessage = nil
-        vpnManager.fetchOVPNFile(with: activationKey)
-    }
+
 }
+
+
 #Preview {
     SettingsView(vpnManager: VPNManager())
 }

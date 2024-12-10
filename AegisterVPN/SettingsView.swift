@@ -20,23 +20,23 @@ struct SettingsView: View {
                 Image("Logo")
                     .resizable()
                     .scaledToFill()
-                    .frame(width: 55, height: 55)
-                    .padding(.bottom, 50)
+                    .frame(width: 65, height: 65)
+                    .padding(.bottom, 75)
                                 
                     Button(action: {
                         showDeleteConfirmation = true
                     }) {
                         Text("Logout")
                             .foregroundStyle(Color.red)
-                            .frame(maxWidth: 203)
+                            .frame(width: 175, height: 50)
+                            .font(Font.custom("Archivo", size: 23, relativeTo: .headline ))
                             .bold()
-                            .padding()
                             .background(Color.accentColor)
-                            .cornerRadius(10)
+                            .cornerRadius(12)
                 }
                 Spacer()
             }
-            .backgroundLogo(logo: Image("Aegister")) // Ensure the logo is scaled and visible
+            .BackgroundViewLogo(logo: Image("Aegister")) 
             .onChange(of: vpnManager.isConfigured) { oldValue, newValue in
                 if oldValue != newValue {
                     if !newValue {

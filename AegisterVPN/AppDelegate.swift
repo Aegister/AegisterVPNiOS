@@ -400,48 +400,18 @@ class VPNManager: ObservableObject {
     }
 }
 
-struct BackgroundLogoView: ViewModifier {
-    var logoImage: Image
-    
-    func body(content: Content) -> some View {
-        content
-            .background(
-                ZStack {
-                    logoImage
-                        .resizable()
-                        .scaledToFill()
-                        .opacity(0.5)
-                        .offset(x: 175, y:0)
-                        .blur(radius: 23)
-                    content
-                }
-            )
-    }
-}
-
-extension View {
-    func backgroundLogo(logo: Image) -> some View {
-        self.modifier(BackgroundLogoView(logoImage: logo))
-    }
-}
 
 struct BackgroundView: ViewModifier {
     var logoImage: Image
     
     func body(content: Content) -> some View {
-        content
-            .background(
-                ZStack {
-                    logoImage
-                        .resizable()
-                        .scaledToFit()
-                        .opacity(0.5)
-                        .offset(x: 175, y:0)
-                        .blur(radius: 10)
-                        .edgesIgnoringSafeArea(.all)
-                    content
-                }
-            )
+        ZStack {
+            logoImage
+                .resizable()
+                .scaledToFill()
+                .edgesIgnoringSafeArea(.all)
+            content
+        }
     }
 }
 

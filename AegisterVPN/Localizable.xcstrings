@@ -1,6 +1,9 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    " Visit our platform app.aegister.com to obtain\n your activation key or Login using your account." : {
+
+    },
     "Activate" : {
       "localizations" : {
         "it" : {
@@ -17,17 +20,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Attivare la VPN"
-          }
-        }
-      }
-    },
-    "Are you sure you want to delete the VPN configuration? This action cannot be undone." : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Siete sicuri di voler eliminare la configurazione VPN? Questa azione non può essere annullata."
           }
         }
       }
@@ -62,28 +54,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Eliminazione"
-          }
-        }
-      }
-    },
-    "Delete current VPN Configuration" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Eliminare la configurazione VPN corrente"
-          }
-        }
-      }
-    },
-    "Delete VPN Configuration" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Eliminazione della configurazione VPN"
           }
         }
       }
@@ -131,6 +101,9 @@
         }
       }
     },
+    "Failed to configure VPN" : {
+
+    },
     "fetchVpnFailed" : {
       "comment" : "Failed to fetch VPN profiles."
     },
@@ -160,17 +133,8 @@
         }
       }
     },
-    "No VPN Profile Found" : {
-
-    },
-    "No VPN profile found associated with the account." : {
-
-    },
     "noVpnProfiles" : {
       "comment" : "No VPN profiles found for this email."
-    },
-    "OK" : {
-
     },
     "Or" : {
 
@@ -187,38 +151,6 @@
     },
     "Sign In" : {
 
-    },
-    "Visit our platform app.aegister.com to obtain your activation key." : {
-      "localizations" : {
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Visitate la nostra piattaforma app.aegister.com per ottenere la chiave di attivazione."
-          }
-        }
-      }
-    },
-    "VPN is Activated" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Il VPN è attivato"
-          }
-        }
-      }
-    },
-    "VPN is not Activated" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Il VPN non è attivato"
-          }
-        }
-      }
     },
     "Welcome to Aegister VPN" : {
       "localizations" : {

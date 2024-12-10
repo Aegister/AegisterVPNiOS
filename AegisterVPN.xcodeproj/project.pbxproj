@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		100191092CE4C164009E4C63 /* WebAuthPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100191082CE4C164009E4C63 /* WebAuthPresenter.swift */; };
+		104ADCDE2D0840E1001F086D /* Archivo.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 104ADC702D0840E1001F086D /* Archivo.ttf */; };
 		10537C372C92DD6E00F38818 /* ConnectScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10537C362C92DD6E00F38818 /* ConnectScreen.swift */; };
 		10537C392C92E45D00F38818 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10537C382C92E45D00F38818 /* SettingsView.swift */; };
 		1059366B2C91849D00BEEC86 /* ActivationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1059366A2C91849D00BEEC86 /* ActivationView.swift */; };
@@ -69,6 +70,7 @@
 /* Begin PBXFileReference section */
 		100191082CE4C164009E4C63 /* WebAuthPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebAuthPresenter.swift; sourceTree = "<group>"; };
 		100191122CE63A91009E4C63 /* networkTargetRelease.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = networkTargetRelease.entitlements; sourceTree = "<group>"; };
+		104ADC702D0840E1001F086D /* Archivo.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Archivo.ttf; sourceTree = "<group>"; };
 		10537C362C92DD6E00F38818 /* ConnectScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectScreen.swift; sourceTree = "<group>"; };
 		10537C382C92E45D00F38818 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		1059366A2C91849D00BEEC86 /* ActivationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivationView.swift; sourceTree = "<group>"; };
@@ -160,6 +162,7 @@
 				10E95E932C85C35600809BD7 /* Preview Content */,
 				106FAD1F2C8B151E00F15463 /* Localizable.xcstrings */,
 				1059366C2C91CED700BEEC86 /* Model.xcdatamodeld */,
+				104ADC702D0840E1001F086D /* Archivo.ttf */,
 			);
 			path = AegisterVPN;
 			sourceTree = "<group>";
@@ -296,6 +299,7 @@
 				10E95E952C85C35600809BD7 /* Preview Assets.xcassets in Resources */,
 				106FAD202C8B151F00F15463 /* Localizable.xcstrings in Resources */,
 				10E95E922C85C35600809BD7 /* Assets.xcassets in Resources */,
+				104ADCDE2D0840E1001F086D /* Archivo.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -556,7 +560,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.01;
+				MARKETING_VERSION = 1.02;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Aegister.VPN.AegisterVPN;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -595,7 +599,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.01;
+				MARKETING_VERSION = 1.02;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Aegister.VPN.AegisterVPN;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;

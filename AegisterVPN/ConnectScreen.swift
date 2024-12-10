@@ -13,13 +13,11 @@ struct ConnectScreen: View {
     var body: some View {
         VStack {
             Spacer()
-            
             Image("Logo")
                 .resizable()
                 .scaledToFill()
-                .frame(width: 55, height: 55)
-                .padding(.bottom, 50)
-
+                .frame(width: 65, height: 65)
+                .padding(.bottom, 75)
                     
             Button(action: {
                 if vpnManager.isConnected {
@@ -30,16 +28,16 @@ struct ConnectScreen: View {
             }) {
                 Text(vpnManager.statusMessage)
                     .bold()
-                    .padding()
-                    .frame(maxWidth: 235)
+                    .font(Font.custom("Archivo", size: 23, relativeTo: .headline ))
+                    .frame(width: 175, height: 50)
                     .background( Color.accentColor)
                     .foregroundColor(.white)
-                    .cornerRadius(10)
+                    .cornerRadius(12)
             }
                         
             Spacer()
         }
-        .backgroundLogo(logo: Image("Aegister"))
+        .BackgroundViewLogo(logo: Image("Aegister"))
     }
 }
 

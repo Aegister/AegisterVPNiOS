@@ -12,7 +12,6 @@
           "value" : "light"
         }
       ],
-      "filename" : "INTERFACCIADARK.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
@@ -23,7 +22,6 @@
           "value" : "dark"
         }
       ],
-      "filename" : "INTERFACCIA.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
